@@ -1,5 +1,5 @@
 
-const url = "https://raw.githubusercontent.com/herschelle001/react/main/images/"
+const url = "https://raw.githubusercontent.com/herschelle001/react/main/social-media-dashboard/images/";
 
 const bottomData = [
     {

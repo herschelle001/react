@@ -1,12 +1,14 @@
 import React from "react";
 
+const url = "https://raw.githubusercontent.com/herschelle001/react/main/social-media-dashboard/images/"
+
 function BottomCard(props) {
 
     const color = props.increment < 0 ? 1 : 0;
     var inc =  props.increment;
     if(color === 1) inc = -props.increment;
-    const up = "https://raw.githubusercontent.com/herschelle001/react/main/images/icon-up.svg"
-    const down = "https://raw.githubusercontent.com/herschelle001/react/main/images/icon-down.svg"
+    const up = url + "icon-up.svg";
+    const down = url + "icon-down.svg"
 
     return (
         <div className="bottom-card card inline-block">
