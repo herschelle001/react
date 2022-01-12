@@ -1,10 +1,42 @@
 import React from "react";
+import $ from "jquery";
 import TopCard from "./TopCard";
 import BottomCard from "./BottomCard";
 import topData from "./topData"
 import bottomData from "./bottomData"
 
 function Main() {
+
+    const [darkMode, setDarkMode] = React.useState(false);
+
+    React.useEffect(() => {
+        const pTags = $('p');
+        const hTags = $('h1');
+        const body = $('body');
+        const cards = $('.card');
+        const header = $('#header');
+        if(darkMode) {
+            body.addClass('background-dark');
+            header.addClass('header-dark');
+            cards.addClass('card-dark');
+            pTags.addClass('text-blue');
+            hTags.addClass('text-white');
+
+        }
+        else {
+            body.removeClass('background-dark');
+            header.removeClass('header-dark');
+            cards.removeClass('card-dark');
+            pTags.removeClass('text-blue');
+            hTags.removeClass('text-white');
+        }
+    }, [darkMode]);
+
+    function handleClick() {
+        setDarkMode(!darkMode);
+    }
+
+
     return (
         <div className="main">
 
@@ -14,7 +46,7 @@ function Main() {
                 <div className="button">
                     <p className="inline-block button-text">Dark Mode</p>
                     <label className="switch inline-block">
-                        <input id="button" onClick={applyDarkMode} type="checkbox"/>
+                        <input id="button" onClick={handleClick} type="checkbox"/>
                         <span className="slider round"/>
                     </label>
                 </div>
@@ -76,41 +108,6 @@ function Main() {
 
         </div>
     )
-}
-
-var dark = 0;
-
-function applyDarkMode() {
-    var cards = document.getElementsByClassName('card');
-    var pTags = document.getElementsByTagName('p');
-    var hTags = document.getElementsByTagName('h1');
-    if (dark === 1) {
-        document.body.classList.remove('background-dark');
-        document.getElementById('header').classList.remove('header-dark');
-        for (let i = 0; i < cards.length; i++) {
-            cards[i].classList.remove('card-dark');
-        }
-        for (let i = 0; i < pTags.length; i++) {
-            pTags[i].classList.remove('text-blue');
-        }
-        for (let i = 0; i < hTags.length; i++) {
-            hTags[i].classList.remove('text-white');
-        }
-        dark = 0;
-    } else {
-        document.body.classList.add('background-dark');
-        document.getElementById('header').classList.add('header-dark');
-        for (let i = 0; i < cards.length; i++) {
-            cards[i].classList.add('card-dark');
-        }
-        for (let i = 0; i < pTags.length; i++) {
-            pTags[i].classList.add('text-blue');
-        }
-        for (let i = 0; i < hTags.length; i++) {
-            hTags[i].classList.add('text-white');
-        }
-        dark = 1;
-    }
 }
 
 export default Main;
