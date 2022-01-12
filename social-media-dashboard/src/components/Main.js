@@ -21,7 +21,9 @@ function Main() {
             cards.addClass('card-dark');
             pTags.addClass('text-blue');
             hTags.addClass('text-white');
-
+            // Hover Effect
+            cards.removeClass('light');
+            cards.addClass('dark');
         }
         else {
             body.removeClass('background-dark');
@@ -29,13 +31,16 @@ function Main() {
             cards.removeClass('card-dark');
             pTags.removeClass('text-blue');
             hTags.removeClass('text-white');
+            // Hover Effect
+            cards.addClass('light');
+            cards.removeClass('dark');
         }
+
     }, [darkMode]);
 
-    function handleClick() {
+    function changeMode() {
         setDarkMode(!darkMode);
     }
-
 
     return (
         <div className="main">
@@ -46,7 +51,7 @@ function Main() {
                 <div className="button">
                     <p className="inline-block button-text">Dark Mode</p>
                     <label className="switch inline-block">
-                        <input id="button" onClick={handleClick} type="checkbox"/>
+                        <input id="button" onClick={changeMode} type="checkbox"/>
                         <span className="slider round"/>
                     </label>
                 </div>

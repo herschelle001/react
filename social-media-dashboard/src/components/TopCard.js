@@ -9,7 +9,7 @@ function TopCard(props) {
     const up = url + "icon-up.svg"
     const down = url + "icon-down.svg"
     return (
-        <div className="top-card card">
+        <div className="top-card card light">
 
             <hr className={`hr ${props.hr}`}/>
 

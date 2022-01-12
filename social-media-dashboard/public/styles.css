@@ -76,6 +76,16 @@ header {
     margin-top: 30px;
 }
 
+/* Card Hover Effect */
+
+.light:hover {
+    background-color: hsl(227, 47%, 90%);
+}
+.dark:hover {
+    background-color: hsl(228, 28%, 30%);
+}
+
+
 /* Top Card Components */
 
 .hr {
@@ -126,7 +136,7 @@ header {
     margin-right: 0.3em;
 }
 
-/* Bottom Card Components*/
+/* Bottom Card Components */
 
 .bottom-card-right {
     float: right;

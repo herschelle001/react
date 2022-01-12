@@ -11,7 +11,7 @@ function BottomCard(props) {
     const down = url + "icon-down.svg"
 
     return (
-        <div className="bottom-card card inline-block">
+        <div className="bottom-card card inline-block light">
 
             <div className="bottom-card-top">
                 <p className="inline-block">{props.text}</p>
